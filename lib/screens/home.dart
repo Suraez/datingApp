@@ -48,18 +48,8 @@ class Home extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         thirdRowFirstButton(),
-        IconButton(
-          icon: Icon(Icons.favorite),
-          onPressed: () {
-            print('hey');
-          },
-          iconSize: 65.0,
-          color: Colors.redAccent,
-        ),
-        IconButton(
-          icon: Icon(Icons.cancel),
-          onPressed: null,
-        )
+        thirdRowSecondButton(),
+        thirdRowThirdButton(),
       ],
     );
   }
@@ -80,13 +70,57 @@ class Home extends StatelessWidget {
         ],
       ),
       child: IconButton(
-        icon: Icon(Icons.play_arrow),
-        iconSize: 29.0,
+        icon: Icon(Icons.favorite),
+        iconSize: 24.0,
         onPressed: () {
           print('hey');
         },
-        color: Colors.red[400],
+        color: Colors.blue,
       ),
     );
   }
+
+  Widget thirdRowSecondButton() {
+    return Container(
+      height: 80,
+      width: 80,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(blurRadius: 5.0, spreadRadius: 2.0, color: Colors.blue)
+          ]),
+      child: IconButton(
+        icon: Icon(Icons.check),
+        iconSize: 50.0,
+        color: Colors.green,
+        onPressed: () {
+          print('hey');
+        },
+      ),
+    );
+  }
+
+
+  Widget thirdRowThirdButton() {
+    return Container(
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(blurRadius: 5.0, spreadRadius: 2.0, color: Colors.blue)
+          ]),
+      child: IconButton(
+        icon: Icon(Icons.cancel),
+        iconSize: 24.0,
+        color: Colors.red,
+        onPressed: () {
+          print('hey');
+        },
+      ),
+    );
+  }
+
 }
